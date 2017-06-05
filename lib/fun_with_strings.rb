@@ -1,7 +1,7 @@
 module FunWithStrings
 	def palindrome?
 		palindrome = gets.chomp
-		
+		puts "Testing for palindrome."		
 	end
 	def count_words
 		# your code here
