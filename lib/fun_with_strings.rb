@@ -14,7 +14,13 @@ module FunWithStrings
 	end
 
 	def anagram_groups
-		# your code here
+		group_hash = Hash.new
+		self.split_words.each do |word|
+			key = word.split('').sort.join('')
+			group_hash[key] ||= []
+			group_hash[key] << word
+		end
+		return group_hash.values
 	end
 
 	def split_words
