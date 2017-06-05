@@ -5,16 +5,20 @@ module FunWithStrings
 	end
 
 	def count_words
-		word_hash = {}
-		self.split_into_words.each do |word|
+		word_hash = Hash.new
+		self.split_words.each do |word|
 			word_hash[word] ||= 0
 			word_hash[word] += 1
 		end
-		word_hash
+		return word_hash
 	end
 
 	def anagram_groups
 		# your code here
+	end
+
+	def split_words
+		self.downcase.gsub(/\W/, ' ').split(/\s+/).delete_if { |word| word == '' }
 	end
 end
 
